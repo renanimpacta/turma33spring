@@ -3,6 +3,8 @@ package org.generation.blogPessoal.model;
 public class UserLogin {
 	
 	//atributos
+	private String id;
+	
 	private String nome;
 	
 	private String usuario;
@@ -13,6 +15,15 @@ public class UserLogin {
 
 	
 	//encapsulamento
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
