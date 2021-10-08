@@ -1,21 +1,36 @@
-package org.generation.blogPessoal.model;
+package org.generation.minhaLojaDeGames.model;
 
-public class UserLogin {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "tb_usuario")
+public class Usuario {
 	
 	//atributos
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	@NotNull
+	@Size(min = 5, max = 100)
 	private String nome;
 	
+	@NotNull
+	@Size(min = 5, max = 100)
 	private String usuario;
 	
+	@NotNull
+	@Size(min = 5, max = 100)
 	private String senha;
-	
-	private String token;
 
 	
 	//encapsulamento
-	
 	public long getId() {
 		return id;
 	}
@@ -23,7 +38,7 @@ public class UserLogin {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -47,14 +62,7 @@ public class UserLogin {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
 	
-	
+
+
 }
